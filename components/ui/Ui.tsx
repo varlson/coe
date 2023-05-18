@@ -1,34 +1,43 @@
+import Link from "next/link";
 import React from "react";
 
 export const Logo = () => {
   return (
-    <div className="flex gap-2">
-      <img className="object-contain h-20" src="Logomarc.png" alt="" />
-      <div className="font-Jura text-center self-center">
-        <p className="font-bold text-normal ">
-          Colegiado do curso de Engenharia Elétrica
-        </p>
-        <p className="font-extralight text-sm">
-          ICEA - Campus João Monlevade - MG - Brasil
-        </p>
-      </div>
+    <div className="flex md:gap-2 items-center">
+      <Link href="/">
+        <img
+          className="object-contain md:h-20 h-24"
+          src="/Logomarc.png"
+          alt=""
+        />
+      </Link>
+      <Link href="/">
+        <div className="font-Jura text-center self-center">
+          <p className="md:font-bold text-sm md:text-base md:text-normal ">
+            Colegiado do curso de Engenharia Elétrica
+          </p>
+          <p className="font-extralight text-xs md:text-sm">
+            ICEA - Campus João Monlevade - MG - Brasil
+          </p>
+        </div>
+      </Link>
     </div>
   );
 };
 
 export const Search = () => {
   return (
-    <div className="flex bg-white rounded-xl">
+    <form className="flex bg-white rounded-xl">
       <input
         className="outline-none rounded-tl-xl rounded-bl-xl w-11/12 px-3 py-1"
         type="text"
       />
       <img
         className="justify-self-end h-10 object-contain"
-        src="Search.png"
+        src="/Search.png"
         alt=""
       />
-    </div>
+    </form>
   );
 };
 
@@ -129,7 +138,7 @@ export const RightSide = () => {
   return (
     <div className=" font-Jura text-basicRed">
       <ul className="divide-y-2 divide-slate-300 p-1 text-center ">
-        <li className="font-semibold my-4">Menu</li>
+        <li className="font-semibold my-4 ">Menu</li>
         <li className="cursor-pointer my-3 ">Ensino</li>
         <li className="cursor-pointer my-3">Pessoal</li>
         <li className="cursor-pointer my-3">Horários</li>
@@ -142,8 +151,8 @@ export const RightSide = () => {
 
 export const Location = () => {
   return (
-    <div className="flex gap-2 items-center">
-      <img className="h-8" src="Address.png" alt="" />
+    <div className="flex gap-2 items-center footer-group">
+      <img className="h-8" src="icons/Address.png" alt="" />
       <div className="font-Jura">
         <p className="my-1">Instituto de Ciências Exatas e Aplicadas - ICEA</p>
         <p className="my-1">
@@ -156,20 +165,20 @@ export const Location = () => {
 
 export const MediaSocial = () => {
   return (
-    <div className="p-1 flex flex-col gap-2">
+    <div className="px-1 flex flex-col gap-2 items-center footer-group">
       <div className="flex gap-2">
-        <img className="h-8" src="facebook.png" alt="" />
-        <img className="h-8" src="insta.png" alt="" />
-        <img className="h-8" src="WhatsApp.png" alt="" />
+        <img className="h-8" src="icons/facebook.png" alt="" />
+        <img className="h-8" src="icons/instagram.png" alt="" />
+        <img className="h-8" src="icons/WhatsApp.png" alt="" />
       </div>
 
       <div className="flex  flex-col">
         <div className="flex gap-2">
-          <img className="h-8" src="phone.png" alt="" />
+          <img className="h-8" src="icons/phone.png" alt="" />
           <p className="my-1">+55 31 3808-0833</p>
         </div>
         <div className="flex gap-2">
-          <img className="h-8" src="email.png" alt="" />
+          <img className="h-8" src="icons/email.png" alt="" />
           <p className="my-1">coee@ufop.edu.br</p>
         </div>
       </div>
@@ -179,8 +188,8 @@ export const MediaSocial = () => {
 
 export const ComercialTime = () => {
   return (
-    <div className="p-1 flex items-center gap-4">
-      <img className="h-8" src="Time Machine.png" alt="" />
+    <div className="p-1 flex items-center gap-4 mt-2">
+      <img className="h-8" src="icons/Time Machine.png" alt="" />
       <div className="flex flex-col">
         <div className="mb-2 text-right">
           <p className="font-bold ">Atendimento Remoto</p>

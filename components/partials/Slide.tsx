@@ -3,34 +3,34 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
+import "swiper/css/autoplay";
+import { slide } from "../../test/datas";
 // import required modules
-import { Navigation } from "swiper";
+import { Navigation, Autoplay } from "swiper";
+import SlideItem from "./SlideItem";
 
 export default function Slide() {
   return (
-    <div className="bg-slate-400 p-2 shadow-xl">
+    <div className="bg shadow-xl">
       <Swiper
         navigation={true}
-        modules={[Navigation]}
-        className="h-[calc(100vh-45vh)] grid"
+        modules={[Navigation, Autoplay]}
+        className="h-[calc(100vh-50vh)] md:h-[calc(100vh-45vh)] grid p-2"
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
       >
-        <SwiperSlide className=" text-center p-2">
-          <div className="flex items-end justify-center self-end h-full">
-            <div className="text-center rgba500 p-3 rounded-md text-white font-Jura font-bold text-xl">
-              quaerat eligendi ratione dolorum, qui culpa expedita unde autem
-              itaque, nihil atque sed?
+        {slide.map((slideItem) => (
+          <SwiperSlide key={slideItem.id} className=" text-center ">
+            <div className="bg-blue-400 h-full">
+              <SlideItem
+                title={slideItem.title}
+                img_url={slideItem.image_url}
+              />
             </div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className=" text-center p-2">Slide 2</SwiperSlide>
-        <SwiperSlide className=" text-center p-2">Slide 3</SwiperSlide>
-        <SwiperSlide className=" text-center p-2">Slide 4</SwiperSlide>
-        <SwiperSlide className=" text-center p-2">Slide 5</SwiperSlide>
-        <SwiperSlide className=" text-center p-2">Slide 6</SwiperSlide>
-        <SwiperSlide className=" text-center p-2">Slide 7</SwiperSlide>
-        <SwiperSlide className=" text-center p-2">Slide 8</SwiperSlide>
-        <SwiperSlide className=" text-center p-2">Slide 9</SwiperSlide>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

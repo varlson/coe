@@ -1,0 +1,12 @@
+/*
+    RIGTH SIDE
+*/
+
+.hide {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.footer-group {
+  @apply md:border-none border-b border-basicBlack py-2 my-3;
+}

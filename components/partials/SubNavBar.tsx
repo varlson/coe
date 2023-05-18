@@ -8,6 +8,7 @@ import {
   ExpandBolsa,
 } from "../ui/Ui";
 import { IncialValue, subNavSwitcher } from "../../services/util";
+import Link from "next/link";
 export default function SubNavBar() {
   useEffect(() => {
     let spand = document.getElementById("inicio") as any;
@@ -46,14 +47,16 @@ export default function SubNavBar() {
           }   px-5 py-2 rounded-t w-full cursor-pointer`}
         >
           <div className="nav-item">
-            <span>Início</span>
+            <Link href={"/"}>
+              <span>Início</span>
+            </Link>
             <img
               id="inicio"
               onClick={(e) => {
                 expandHandler(e);
               }}
               className="h-5"
-              src="Chevron.png"
+              src="/icons/expand_arrow.png"
               alt=""
             />
           </div>
@@ -71,7 +74,7 @@ export default function SubNavBar() {
               }}
               id="curso"
               className="h-5"
-              src="Chevron.png"
+              src="/icons/expand_arrow.png"
               alt=""
             />
           </div>
@@ -89,7 +92,7 @@ export default function SubNavBar() {
               }}
               id="infra"
               className="h-5"
-              src="Chevron.png"
+              src="/icons/expand_arrow.png"
               alt=""
             />
           </div>
@@ -107,7 +110,7 @@ export default function SubNavBar() {
               }}
               id="pesquisa"
               className="h-5"
-              src="Chevron.png"
+              src="/icons/expand_arrow.png"
               alt=""
             />
           </div>
@@ -125,7 +128,7 @@ export default function SubNavBar() {
               }}
               id="bolsa"
               className="h-5"
-              src="Chevron.png"
+              src="/icons/expand_arrow.png"
               alt=""
             />
           </div>

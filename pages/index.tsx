@@ -1,11 +1,23 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import { LeftSide, RightSide } from "../components/ui/Ui";
 import Slide from "../components/partials/Slide";
+import { Cards } from "../components/ui/Cards";
+import { cards, newsData } from "../test/datas";
+import { useEffect, useState } from "react";
+import Spinner from "../components/ui/Spinner";
+import { LeftSide, RightSide } from "../components/ui/Ui";
+import Index from "../components/pages/Index";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    setIsReady(true);
+  }, []);
+
+  if (!isReady) return <Spinner />;
   return (
     <>
       <Head>
@@ -14,14 +26,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      <main className="p-2">
-        <div className="gap-1  w-11/12 m-auto grid grid-cols-11">
-          <RightSide />
-          <div className="bg-orange-400 col-span-9">
-            <Slide />
-          </div>
-          <LeftSide />
-        </div>
+      <main className="">
+        <Index />
       </main>
     </>
   );
