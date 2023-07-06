@@ -342,3 +342,7 @@ export const slide: ISlide[] = [
     id: "56789",
   },
 ];
+
+export type showMenuProp = {
+  showMenuHandler: () => void;
+};

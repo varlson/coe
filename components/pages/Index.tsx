@@ -12,14 +12,14 @@ import Slide from "../partials/Slide";
 function Index() {
   return (
     <div className="w-full grid grid-cols-12 px-3 pt-5">
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <LeftSide />
       </div>
-      <div className="p-2 col-span-12 md:col-span-10  ">
+      <div className="p-2 col-span-12 lg:col-span-10  ">
         <div className="">
           <Slide />
         </div>
-        <div className="grid md:grid-cols-3">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3">
           {newsData.map((item, key) => (
             <div key={item.id}>
               <Cards
@@ -33,7 +33,7 @@ function Index() {
         </div>
       </div>
 
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <RightSide />
       </div>
     </div>

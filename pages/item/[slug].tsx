@@ -27,7 +27,7 @@ function News() {
         });
     }
 
-    getFiltred(slug);
+    getFiltred(slug as string);
   }, []);
 
   if (isLoading)
@@ -37,7 +37,7 @@ function News() {
       </div>
     );
   return (
-    <div className="m-auto w-9/12">
+    <div className="m-auto md:w-9/12 text-justify p-2 md:p-0">
       {" "}
       {typeof news === "string" ? news : <NewsCard news={news} />}
     </div>

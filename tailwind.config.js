@@ -18,6 +18,7 @@ module.exports = {
         red800: "#a71c07",
         basicBlack: "#303030",
         darkRed: "#873926",
+        darkRed500: "#943e29",
         dark800: "#0a0301",
       },
     },

@@ -15,7 +15,7 @@ export default function Slide() {
       <Swiper
         navigation={true}
         modules={[Navigation, Autoplay]}
-        className="h-[calc(100vh-50vh)] md:h-[calc(100vh-45vh)] grid p-2"
+        className="h-[calc(100vh-50vh)]s md:h-[calc(100vh-45vh)] lg:h-[calc(100vh-35vh)]  grid p-2"
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
@@ -23,7 +23,7 @@ export default function Slide() {
       >
         {slide.map((slideItem) => (
           <SwiperSlide key={slideItem.id} className=" text-center ">
-            <div className="bg-blue-400 h-full">
+            <div className="">
               <SlideItem
                 title={slideItem.title}
                 img_url={slideItem.image_url}

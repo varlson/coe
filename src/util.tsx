@@ -1,4 +1,4 @@
-import { INews } from "../types/types";
+import { INews, Sobre, SobreKeyOf } from "../types/types";
 import { newsData } from "../test/datas";
 
 export const filter = (id: string): Promise<INews[]> => {
@@ -27,4 +27,9 @@ export const clickHandle = (contentName: string) => {
     hideShow.style.maxHeight = hideShow.scrollHeight + "px";
     console.log("sem altura");
   }
+};
+
+export const getComponent = (slug: string) => {
+  const key = slug as SobreKeyOf;
+  return Sobre[key];
 };

@@ -1,7 +1,7 @@
 import React from "react";
 
 type BUttonProps = {
-  [key: string]: string;
+  label: string;
 };
 
 function Button({ label }: BUttonProps) {

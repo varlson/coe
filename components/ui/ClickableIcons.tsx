@@ -1,9 +1,15 @@
 import React from "react";
+import { showMenuProp } from "../../test/datas";
 
-function ClickableIcons({}) {
+function ClickableIcons({ showMenuHandler }: showMenuProp) {
   return (
     <div>
-      <img className="object-contain h-16" src="/icons/menu.png" alt="" />
+      <img
+        onClick={showMenuHandler}
+        className="object-contain h-12"
+        src="/icons/menu.png"
+        alt=""
+      />
     </div>
   );
 }

@@ -14,7 +14,7 @@ export function Cards({ id, title, body, img_url }: INews) {
   return (
     <div className="font-Jura border p-2 shadow m-2">
       <div>
-        <img className="object-contain rounded" src={img_url} alt="" />
+        <img className="object-fill rounded " src={img_url} alt="" />
       </div>
 
       <div className="mb-1 ">

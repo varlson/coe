@@ -7,7 +7,7 @@ export const Logo = () => {
       <Link href="/">
         <img
           className="object-contain md:h-20 h-24"
-          src="/Logomarc.png"
+          src="/icons/Logomarc.png"
           alt=""
         />
       </Link>
@@ -34,7 +34,7 @@ export const Search = () => {
       />
       <img
         className="justify-self-end h-10 object-contain"
-        src="/Search.png"
+        src="/icons/red-search.png"
         alt=""
       />
     </form>
@@ -44,10 +44,18 @@ export const Search = () => {
 export const ExpandInicio = () => {
   return (
     <ul className="bg-basicRed flex text-center">
-      <li className="px-5 py-2 cursor-pointer">Sobre Colegiado</li>
-      <li className="px-5 py-2 cursor-pointer">Sobre NDE</li>
-      <li className="px-5 py-2 cursor-pointer">Sobre NDEE</li>
-      <li className="px-5 py-2 cursor-pointer">COEE em Números</li>
+      <Link href="/sobre/colegiado">
+        <li className="px-5 py-2 cursor-pointer">Sobre Colegiado</li>
+      </Link>
+      <Link href="/sobre/nde">
+        <li className="px-5 py-2 cursor-pointer">Sobre NDE</li>
+      </Link>
+      <Link href="/sobre/ndee">
+        <li className="px-5 py-2 cursor-pointer">Sobre NDEE</li>
+      </Link>
+      <Link href="/coee-em-numeros">
+        <li className="px-5 py-2 cursor-pointer">COEE em Números</li>
+      </Link>
     </ul>
   );
 };
@@ -167,18 +175,18 @@ export const MediaSocial = () => {
   return (
     <div className="px-1 flex flex-col gap-2 items-center footer-group">
       <div className="flex gap-2">
-        <img className="h-8" src="icons/facebook.png" alt="" />
-        <img className="h-8" src="icons/instagram.png" alt="" />
-        <img className="h-8" src="icons/WhatsApp.png" alt="" />
+        <img className="h-8" src="/icons/facebook.png" alt="" />
+        <img className="h-8" src="/icons/instagram.png" alt="" />
+        <img className="h-8" src="/icons/WhatsApp.png" alt="" />
       </div>
 
-      <div className="flex  flex-col">
+      <div className="flex flex-col">
         <div className="flex gap-2">
-          <img className="h-8" src="icons/phone.png" alt="" />
+          <img className="h-8" src="/icons/phone.png" alt="" />
           <p className="my-1">+55 31 3808-0833</p>
         </div>
         <div className="flex gap-2">
-          <img className="h-8" src="icons/email.png" alt="" />
+          <img className="h-8" src="/icons/email.png" alt="" />
           <p className="my-1">coee@ufop.edu.br</p>
         </div>
       </div>
@@ -188,8 +196,8 @@ export const MediaSocial = () => {
 
 export const ComercialTime = () => {
   return (
-    <div className="p-1 flex items-center gap-4 mt-2">
-      <img className="h-8" src="icons/Time Machine.png" alt="" />
+    <div className="p-1 flex items-center gap-4 mt-2 bg-red">
+      <img className="h-8" src="/icons/Time Machine.png" alt="" />
       <div className="flex flex-col">
         <div className="mb-2 text-right">
           <p className="font-bold ">Atendimento Remoto</p>
@@ -203,5 +211,31 @@ export const ComercialTime = () => {
         </div>
       </div>
     </div>
+  );
+};
+
+type avatarProp = {
+  img: string;
+};
+export const Avatar = ({ img }: avatarProp) => {
+  return (
+    <img className="object-contain h-14" src={`/icons/${img}.png`} alt="" />
+  );
+};
+
+type AdmMenuItemProp = {
+  img: string;
+  label: string;
+  link: string;
+};
+
+export const AdmMenuItem = ({ img, label, link }: AdmMenuItemProp) => {
+  return (
+    <Link href={link}>
+      <div className="cursor-pointer p-2 bg-darkRed500 font-Jura rounded shadow bordera w-28 grid justify-items-center">
+        <img className="h-14 object-contain" src={`/icons/${img}.png`} alt="" />
+        <p className="text-white ">{label}</p>
+      </div>
+    </Link>
   );
 };
